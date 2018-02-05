@@ -17,6 +17,7 @@ class Run():
                         (cfg_disp['width'], cfg_disp['height']))
         pygame.display.set_caption(cfg_disp['caption'])
         
+        self.input_memory_dict = cfg_input.copy()
         self.exit = False
         self.gameLoop()
         pygame.quit()
@@ -25,6 +26,7 @@ class Run():
         while not self.exit:
             self.check_events()
             self.apply_input()
+            self.assign_input_memory()
             self.update_display()
             self.clock.tick(60)
             
@@ -50,6 +52,11 @@ class Run():
                     
     def apply_input(self):
         pass
+    
+    
+    def assign_input_memory(self):
+        for key in self.input_memory_dict.keys():
+            self.input_memory_dict[key] = cfg_input[key]
 
         
     def update_display(self):
