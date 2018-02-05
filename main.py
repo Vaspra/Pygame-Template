@@ -6,6 +6,7 @@ Created on Mon Feb  5 00:33:07 2018
 """
 
 from config import cfg_disp, cfg_input, cfg_color
+from functions import Pix_To_Coords, Coords_To_Pix
 import pygame
 
 class Run():
@@ -23,6 +24,7 @@ class Run():
     def gameLoop(self):
         while not self.exit:
             self.check_events()
+            self.apply_input()
             self.update_display()
             self.clock.tick(60)
             
@@ -44,6 +46,10 @@ class Run():
             elif event.type == pygame.KEYDOWN:
                 if event.key in cfg_input.keys():
                     cfg_input[event.key] = False
+                    
+                    
+    def apply_input(self):
+        pass
 
         
     def update_display(self):
