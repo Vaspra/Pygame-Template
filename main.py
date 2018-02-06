@@ -45,7 +45,7 @@ class Run():
                 if event.key in cfg_input.keys():
                     cfg_input[event.key] = True
                         
-            elif event.type == pygame.KEYDOWN:
+            elif event.type == pygame.KEYUP:
                 if event.key in cfg_input.keys():
                     cfg_input[event.key] = False
                     
