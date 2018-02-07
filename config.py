@@ -29,7 +29,9 @@ cfg_input = {pygame.K_UP:       False,
              'mouse_y':         0,
              'mouse_0':         False,
              'mouse_1':         False,
-             'mouse_2':         False}
+             'mouse_2':         False,
+             'mouse_scroll_up': False,
+             'mouse_scroll_down':False}
 
 
 cfg_color = {'black':           (20,20,20),

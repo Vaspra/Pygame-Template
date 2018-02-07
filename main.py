@@ -35,6 +35,8 @@ class Run():
         cfg_input['mouse_x'], cfg_input['mouse_y'] = pygame.mouse.get_pos()
         cfg_input['mouse_0'], cfg_input['mouse_1'], cfg_input['mouse_2'] =\
             pygame.mouse.get_pressed()
+        cfg_input['mouse_scroll_up'] = False
+        cfg_input['mouse_scroll_down'] = False
             
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
@@ -48,6 +50,12 @@ class Run():
             elif event.type == pygame.KEYUP:
                 if event.key in cfg_input.keys():
                     cfg_input[event.key] = False
+                    
+            elif event.type == pygame.MOUSEBUTTONDOWN:
+                if event.button == 4:
+                    cfg_input['mouse_scroll_up'] = True
+                elif event.button == 5:
+                    cfg_input['mouse_scroll_down'] = True
                     
                     
     def apply_input(self):
