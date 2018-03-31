@@ -13,6 +13,7 @@ class Window():
     
     def __init__(self):
         self.display = glo['main'].display
+        self.active = False
         
     def update(self):
         self.apply_input()

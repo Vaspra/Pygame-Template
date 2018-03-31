@@ -82,8 +82,9 @@ class Main():
     
     def update_windows(self):
         self.display.fill(self.background_color)
-        for window_obj in self.window_obj_dict:
-            window_obj.update()
+        for window_obj in self.window_obj_dict.values():
+            if window_obj.active:
+                window_obj.update()
         pygame.display.update()
         
 
