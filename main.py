@@ -14,7 +14,9 @@ from global_store import input_dict, input_memory_dict
 
 
 class Main():
+    
     def __init__(self):
+        
         glo['main'] = self   # Reference main object in globals
         self.window_obj_dict = {}  # Define window object dictionary
         self.background_color = cfg['background_color']
@@ -31,7 +33,9 @@ class Main():
             
         
     def loop(self):
+        
         self.exit = False
+        
         while not self.exit:
             self.check_events()
             self.apply_input()
@@ -41,28 +45,38 @@ class Main():
         
         
     def check_events(self):
-        ''' Check the events list one by one for input / exitting '''
+        
+        """
+        Check the events list one by one for input / exitting.
+        """
+        
         # Check mouse position and buttons
         input_dict['mouse_x'], input_dict['mouse_y'] = pygame.mouse.get_pos()
         input_dict['mouse_0'], input_dict['mouse_1'], input_dict['mouse_2'] =\
             pygame.mouse.get_pressed()
+            
         # Re-initialise mouse scrolls
         input_dict['mouse_scroll_up'] = False
         input_dict['mouse_scroll_down'] = False
+        
         # Check over incoming events
         for event in pygame.event.get():
+            
             # Check for quit event
             if event.type == pygame.QUIT:
                 self.exit = True
                 print(event)
+                
             # Key-press events
             elif event.type == pygame.KEYDOWN:
                 if event.key in input_dict.keys():
                     input_dict[event.key] = True
+                    
             # Key-release events
             elif event.type == pygame.KEYUP:
                 if event.key in input_dict.keys():
                     input_dict[event.key] = False
+                    
             # Mouse scroll events
             elif event.type == pygame.MOUSEBUTTONDOWN:
                 if event.button == 4:
@@ -90,5 +104,6 @@ class Main():
 
 
 if __name__ == '__main__':
+    
     main = Main()
     
