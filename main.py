@@ -93,15 +93,19 @@ class Main():
         
     
     def store_input_memory(self):
+        
         for key, value in input_dict.items():
             input_memory_dict[key] = value
     
     
     def update_windows(self):
+        
         self.display.fill(self.background_color)
+        
         for window_obj in self.window_obj_dict.values():
             if window_obj.active:
                 window_obj.update()
+                
         pygame.display.update()
         
 
