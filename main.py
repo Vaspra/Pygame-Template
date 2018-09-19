@@ -48,7 +48,6 @@ class Main():
         
         
     def check_events(self):
-        
         """
         Check the events list one by one for input / exitting.
         """
