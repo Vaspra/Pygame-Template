@@ -20,14 +20,17 @@ class Main():
         glo['main'] = self   # Reference main object in globals
         self.window_obj_dict = {}  # Define window object dictionary
         self.background_color = cfg['background_color']
+        
         # Initialise pygame
         pygame.init()
         self.clock = pygame.time.Clock()
         self.display = pygame.display.set_mode(\
             (cfg['disp_width'], cfg['disp_height']))
         pygame.display.set_caption(cfg['caption'])
+        
         # Run loop
         self.loop()
+        
         # Exit at end of loop
         pygame.quit()
             
