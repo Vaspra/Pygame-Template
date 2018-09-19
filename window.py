@@ -18,13 +18,16 @@ class Window():
         self.display = glo['main'].display
         self.active = False
         
+        
     def update(self):
         
         self.apply_input()
         self.update_display()
         
+        
     def apply_input(self):
         pass
+    
     
     def update_display(self):
         pass
